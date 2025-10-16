@@ -116,9 +116,9 @@ const Work = () => {
         opacity: 1,
         y: 0,
         scale: 1,
-        duration: 0.8,
+        duration: 0.6,
         ease: "power2.out",
-        stagger: 0.1,
+        stagger: 0.05,
         scrollTrigger: {
           trigger: workRef.current,
           start: "top 80%",
@@ -127,12 +127,12 @@ const Work = () => {
         }
       })
 
-      // Hover animations for work items
+      // Optimized hover animations for work items
       document.querySelectorAll('.work-item').forEach((item) => {
         item.addEventListener('mouseenter', () => {
           gsap.to(item, {
-            scale: 1.05,
-            duration: 0.3,
+            scale: 1.02,
+            duration: 0.2,
             ease: "power2.out"
           })
         })
@@ -140,7 +140,7 @@ const Work = () => {
         item.addEventListener('mouseleave', () => {
           gsap.to(item, {
             scale: 1,
-            duration: 0.3,
+            duration: 0.2,
             ease: "power2.out"
           })
         })
@@ -172,14 +172,14 @@ const Work = () => {
         // Animate scale only (keep original colors)
         if (index !== expandedIndex) {
           gsap.to(element, {
-            scale: 0.85,
-            duration: 0.4,
+            scale: 0.9,
+            duration: 0.3,
             ease: "power2.out"
           })
         } else {
           gsap.to(element, {
             scale: 1,
-            duration: 0.4,
+            duration: 0.3,
             ease: "power2.out"
           })
         }
@@ -195,7 +195,7 @@ const Work = () => {
           gridColumnStart: 'auto',
           gridRowStart: 'auto',
           scale: 1,
-          duration: 0.5,
+          duration: 0.3,
           ease: "power2.out"
         })
       })
@@ -213,13 +213,23 @@ const Work = () => {
   return (
     <>
       <style jsx>{`
+        .work-item {
+          will-change: transform;
+          backface-visibility: hidden;
+          transform: translateZ(0);
+        }
         @media (max-width: 767px) {
+          .work-item {
+            overflow: hidden !important;
+            border-radius: 20px !important;
+          }
           .work-item img {
             object-fit: cover !important;
             width: 100% !important;
             height: 100% !important;
             max-width: 100% !important;
             max-height: 100% !important;
+            border-radius: 17px !important;
           }
         }
       `}</style>
@@ -257,7 +267,8 @@ const Work = () => {
                 border: '3px solid #000',
                 boxShadow: '0 8px 20px rgba(0,0,0,0.2)',
                 transition: 'all 0.5s ease',
-                position: 'relative'
+                position: 'relative',
+                contain: 'layout style paint'
               }}
             >
               <img
@@ -268,7 +279,10 @@ const Work = () => {
                   filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.1))',
                   maxWidth: '100%',
                   maxHeight: '100%',
-                  objectFit: 'cover'
+                  objectFit: 'cover',
+                  borderRadius: '17px',
+                  width: '100%',
+                  height: '100%'
                 }}
               />
               

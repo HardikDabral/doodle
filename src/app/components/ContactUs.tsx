@@ -96,18 +96,27 @@ Please reply to this email to contact the client.`
 
 
   return (
-    <div 
-      ref={contactRef}
-      data-section="contact"
-      className="contact-section relative h-screen flex items-center justify-center overflow-hidden"
-      style={{
-        backgroundImage: 'url(/images/contactUs/Contact.jpg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundAttachment: 'fixed'
-      }}
-    >
+    <>
+      <style jsx>{`
+        @media (max-width: 767px) {
+          .contact-section {
+            background-image: none !important;
+            background-color: #ffc542 !important;
+          }
+        }
+      `}</style>
+      <div 
+        ref={contactRef}
+        data-section="contact"
+        className="contact-section relative h-screen flex items-center justify-center overflow-hidden"
+        style={{
+          backgroundImage: 'url(/images/contactUs/Contact.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed'
+        }}
+      >
       
       <div className="relative z-20 max-w-6xl mx-auto w-full px-8">
         <div className="flex justify-center">
@@ -258,6 +267,7 @@ Please reply to this email to contact the client.`
         </div>
       </div>
     </div>
+    </>
   )
 }
 
