@@ -211,11 +211,23 @@ const Work = () => {
   }
 
   return (
-    <div 
-      ref={workRef}
-      data-section="work"
-      className="work-section relative min-h-screen py-20 px-8 bg-white"
-    >
+    <>
+      <style jsx>{`
+        @media (max-width: 767px) {
+          .work-item img {
+            object-fit: cover !important;
+            width: 100% !important;
+            height: 100% !important;
+            max-width: 100% !important;
+            max-height: 100% !important;
+          }
+        }
+      `}</style>
+      <div 
+        ref={workRef}
+        data-section="work"
+        className="work-section relative min-h-screen py-20 px-8 bg-white"
+      >
       <div className="max-w-7xl mx-auto">
         <h2 
           ref={titleRef}
@@ -244,7 +256,8 @@ const Work = () => {
                 overflow: 'hidden',
                 border: '3px solid #000',
                 boxShadow: '0 8px 20px rgba(0,0,0,0.2)',
-                transition: 'all 0.5s ease'
+                transition: 'all 0.5s ease',
+                position: 'relative'
               }}
             >
               <img
@@ -252,7 +265,10 @@ const Work = () => {
                 alt={image.alt}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 style={{
-                  filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.1))'
+                  filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.1))',
+                  maxWidth: '100%',
+                  maxHeight: '100%',
+                  objectFit: 'cover'
                 }}
               />
               
@@ -280,6 +296,7 @@ const Work = () => {
         </div>
       </div>
     </div>
+    </>
   )
 }
 

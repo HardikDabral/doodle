@@ -12,14 +12,14 @@ const Skills = () => {
   const skillsGridRef = useRef<HTMLDivElement>(null)
 
   const skills = [
-    { name: 'Illustration', level: 95 },
-    { name: 'Logo Design', level: 90 },
-    { name: 'Typography', level: 88 },
+    { name: 'Painting', level: 95 },
+    { name: 'Sketching', level: 90 },
+    { name: 'AI', level: 88 },
     { name: 'Color Theory', level: 92 },
-    { name: 'Digital Art', level: 85 },
-    { name: 'Brand Identity', level: 87 },
-    { name: 'UI/UX Design', level: 80 },
-    { name: 'Print Design', level: 83 }
+    { name: 'Adobe Photoshop', level: 99 },
+    { name: 'Adobe Illustrator', level: 98 },
+    { name: 'After Effects', level: 88},
+    { name: 'Autodesk 3ds Max', level: 90 }
   ]
 
   useEffect(() => {
