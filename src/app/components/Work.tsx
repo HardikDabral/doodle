@@ -222,6 +222,7 @@ const Work = () => {
           .work-item {
             overflow: hidden !important;
             border-radius: 20px !important;
+            border: none !important;
           }
           .work-item img {
             object-fit: cover !important;
@@ -229,8 +230,8 @@ const Work = () => {
             height: 100% !important;
             max-width: 100% !important;
             max-height: 100% !important;
-            border-radius: 17px !important;
-            clip-path: inset(0 round 17px) !important;
+            border-radius: 20px !important;
+            clip-path: inset(0 round 20px) !important;
           }
         }
       `}</style>
