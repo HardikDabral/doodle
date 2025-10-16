@@ -230,6 +230,7 @@ const Work = () => {
             max-width: 100% !important;
             max-height: 100% !important;
             border-radius: 17px !important;
+            clip-path: inset(0 round 17px) !important;
           }
         }
       `}</style>
